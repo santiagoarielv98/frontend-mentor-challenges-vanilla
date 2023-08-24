@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;800&display=swap");
+
+:root {
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+
+  --font-family: "Red Hat Display", sans-serif;
+  --font-medium: 500;
+  --font-bold: 700;
+  --font-black: 900;
+  --font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  background-color: var(--pale-blue);
+  padding: 1.5rem;
+  background-image: url("images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.card {
+  width: 100%;
+  max-width: 28rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: var(--very-pale-blue);
+}
+.card-content {
+  flex: 1;
+  padding: 3rem;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+.card-content > h1 {
+  font-weight: var(--font-black);
+  font-size: 1.75rem;
+  letter-spacing: 0.02em;
+}
+.card-content > p {
+  margin-top: 15px;
+  line-height: 1.6;
+}
+.card-plan {
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 1.25rem;
+}
+.card-plan > a {
+  font-size: 0.875rem;
+}
+.card-plan-content {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.card-plan-content > h2 {
+  font-size: 1rem;
+}
+.card-payment {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.btn {
+  width: 100%;
+  font-weight: var(--font-black);
+  letter-spacing: 0.01em;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: unset;
+  cursor: pointer;
+}
+:is(.btn, .card-plan > a):hover {
+  opacity: 0.8;
+}
+.btn-cancel {
+  width: max-content;
+  padding: 0 1rem;
+}
+.btn-payment {
+  padding: 1rem;
+  background-color: var(--bright-blue);
+  color: var(--very-pale-blue);
+  box-shadow: 0px 10px 20px -10px var(--desaturated-blue);
+}
+/* attribution */
+.attribution {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 0.25rem 0.5rem;
+  background-color: white;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: url("images/pattern-background-mobile.svg");
+  }
+  .card-content {
+    padding: 2rem 1.6rem;
+  }
+  .card-content > h1 {
+    font-size: 1.4rem;
+  }
+  .card-plan {
+    padding: 0.75rem 1rem;
+  }
+  .card-payment {
+    gap: 1.5rem;
+  }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A simple quiz app built with HTML, CSS and JavaScript." />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <title>SV | Results summary component</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="card__left">
+        <h3>Your Result</h3>
+        <div class="card__left__score">
+          <h1 id="score">--</h1>
+          <span>of 100</span>
+        </div>
+        <h2>Great</h2>
+        <p>You scored higher than 65% of the people who have taken these tests.</p>
+      </div>
+      <div class="card__right">
+        <h3>Summary</h3>
+        <ul class="card__right__list" id="list"></ul>
+        <button class="btn-primary">
+          <span> Continue </span>
+        </button>
+      </div>
+    </div>
+    <div class="attribution">
+      Coded by
+      <a href="#">Santiago Villanueva</a>.
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
