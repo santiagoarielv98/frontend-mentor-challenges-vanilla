@@ -20,4 +20,5 @@ export default defineConfig({
       },
     },
   },
+  base: process.env.NODE_ENV === "production" ? "/frontend-mentor-challenges-vanilla/" : "/",
 });
