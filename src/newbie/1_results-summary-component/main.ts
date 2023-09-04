@@ -1,10 +1,12 @@
-const list = document.getElementById("list");
-const score = document.getElementById("score");
+import type { Score } from "./type";
 
-fetch("./data.json", { cache: "force-cache" }).then((response) => {
-  response.json().then((data) => {
-    total = data.reduce((acc, item) => acc + item.score, 0);
-    score.innerHTML = Math.round(total / data.length);
+const list = document.getElementById("list")!;
+const score = document.getElementById("score")!;
+
+fetch("/data/results.json", { cache: "force-cache" }).then((response) => {
+  response.json().then((data: Score[]) => {
+    const total = data.reduce((acc, item) => acc + item.score, 0);
+    score.innerHTML = Math.round(total / data.length).toString();
     data.forEach((item) => {
       const li = document.createElement("li");
       li.classList.add("item");

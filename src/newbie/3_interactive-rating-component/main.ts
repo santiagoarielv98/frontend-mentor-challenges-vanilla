@@ -1,17 +1,17 @@
-const form = document.querySelector("form");
-const rating = document.getElementById("rating"); // template
-const thankYou = document.getElementById("thank-you"); // template
+const form = document.querySelector("form")!;
+const rating = document.getElementById("rating")! as HTMLTemplateElement;
+const thankYou = document.getElementById("thank-you")! as HTMLTemplateElement;
 
 form.appendChild(rating.content.cloneNode(true));
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const formData = new FormData(form);
-  const value = formData.get("rating");
+  const value = formData.get("rating") as string;
   form.innerHTML = "";
   form.classList.add("completed");
   form.appendChild(thankYou.content.cloneNode(true));
-  form.querySelector("b").textContent = value;
+  form.querySelector("b")!.textContent = value;
 
   setTimeout(() => {
     form.classList.remove("completed");
