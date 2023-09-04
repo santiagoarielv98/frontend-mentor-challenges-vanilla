@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,600;6..12,800&display=swap");
+
+@tailwind utilities;
+@tailwind base;
+
+:root {
+  --font-family: "Nunito Sans", sans-serif;
+  --font-size: 1rem;
+  --font-weight: 400;
+  --line-height: 1.5;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  min-height: 100vh;
+}
