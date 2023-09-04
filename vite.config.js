@@ -6,7 +6,11 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
+
+        // advanced
         "rest-countries": resolve(__dirname, "src/advanced/rest-countries/index.html"),
+
+        // newbie
         "results-summary": resolve(__dirname, "src/newbie/1_results-summary-component/index.html"),
         "product-preview": resolve(__dirname, "src/newbie/2_product-preview-card-component/index.html"),
         "interactive-rating": resolve(__dirname, "src/newbie/3_interactive-rating-component/index.html"),
