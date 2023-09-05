@@ -7,10 +7,8 @@ import "./style.css";
 
 const app = document.querySelector<HTMLDivElement>("#app")!;
 
-const renderCard = (country: Country) => {
-  return `<div
-  class="card w-[16.5rem] flex flex-col h-[21rem] shadow-md bg-white rounded-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
->
+const renderCard = (country: Country) => `
+<div class="card w-[16.5rem] flex flex-col h-[21rem] shadow-md bg-white rounded-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow">
   <img
     class="w-full h-40 object-cover"
     src=${country.flags.svg}
@@ -41,11 +39,10 @@ const renderCard = (country: Country) => {
       </li>
     </ul>
   </div>
-</div>
-  `;
-};
-const renderDetailPage = (country: Country) => {
-  return `<button
+</div>`;
+
+const renderDetailPage = (country: Country) => `
+<button
   id="back-button"
   class="inline-flex w-[8.5rem] justify-center gap-2 px-4 py-2 pr-6 bg-white rounded-md shadow-md cursor-pointer hover:shadow-lg transition-shadow focus:ring-2 focus:ring-gray-300"
 >
@@ -129,12 +126,10 @@ const renderDetailPage = (country: Country) => {
       </div>
     </div>
   </div>
-</div>
-`;
-};
+</div>`;
 
-const renderHome = () => {
-  return `<form class="flex justify-between gap-4 flex-wrap">
+const renderHome = () => `
+<form class="flex justify-between gap-4 flex-wrap">
   <div class="inline-flex w-full max-w-[30rem] min-w-[15rem] relative h-max shadow-md bg-white rounded-md">
     <div class="absolute inset-y-0 left-0 flex items-center px-6 pointer-events-none">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
@@ -178,9 +173,7 @@ const renderHome = () => {
     </ul>
   </label>
 </form>
-<div id="cards-container" class="mt-12 grid gap-[4.625rem] grid-cols-[repeat(auto-fit,_minmax(16.5rem,_1fr))]"></div>
-`;
-};
+<div id="cards-container" class="mt-12 grid gap-[4.625rem] grid-cols-[repeat(auto-fit,_minmax(16.5rem,_1fr))]"></div>`;
 
 const renderCountries = (countries: Country[]) => {
   const cardsContainer = document.querySelector("#cards-container")!;
@@ -233,6 +226,6 @@ const initialRender = async () => {
 
 document.documentElement.classList.toggle(Theme.DARK, localStorage.theme === Theme.DARK);
 
-document.querySelector("#theme-toggle")!.addEventListener("click", toggleTheme);
+document.querySelector("#theme-toggle")?.addEventListener("click", toggleTheme);
 
 initialRender();
