@@ -4,7 +4,7 @@ const filters = ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
 
 export const renderHomePage = (): string => `
 <form class="flex justify-between gap-4 flex-wrap">
-  <div class="inline-flex w-full max-w-[30rem] min-w-[15rem] relative h-max shadow-md bg-white rounded-md">
+  <div class="inline-flex w-full max-w-[30rem] min-w-[15rem] relative">
     <div class="absolute inset-y-0 left-0 flex items-center px-6 pointer-events-none">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
         <path
@@ -15,13 +15,12 @@ export const renderHomePage = (): string => `
       </svg>
     </div>
     <input
-      class="w-full px-6 py-4 pl-[73px] text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300 hover:ring-2 hover:ring-gray-300"
-      type="text"
+      class="w-full px-6 py-4 pl-[73px] text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300 hover:ring-2 hover:ring-gray-300 dark:bg-gray-800 shadow-md"
       id="search"
       placeholder="Search for a country..."
     />
   </div>
-  <label class="inline-flex w-full max-w-[12.5rem] relative h-max shadow-md bg-white rounded-md">
+  <label class="inline-flex w-full max-w-[12.5rem] relative h-max shadow-md bg-white rounded-md dark:bg-gray-800">
     <input id="menu" hidden class="peer" type="checkbox" />
     <div class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
@@ -39,12 +38,12 @@ export const renderHomePage = (): string => `
       id="label"
       >Filter by Region</label
     >
-    <ul id="filter" class="invisible absolute inset-x-0 top-full mt-2 py-3 peer-checked:visible shadow-md bg-white cursor-pointer">
-      <li class="px-6 py-1 hover:bg-gray-100 hover:text-gray-900" data-value="">All</li>
+    <ul id="filter" class="invisible absolute inset-x-0 top-full mt-2 py-3 peer-checked:visible shadow-md bg-white cursor-pointer dark:bg-gray-800 rounded-md z-10">
+      <li class="px-6 py-1 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-700 dark:hover:text-gray-100" data-value="">All</li>
       ${filters
         .map(
           (filter) => `
-<li class="px-6 py-1 hover:bg-gray-100 hover:text-gray-900" data-value="${filter}">${filter}</li>
+<li class="px-6 py-1 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-700 dark:hover:text-gray-100" data-value="${filter}">${filter}</li>
 `
         )
         .join('')}
@@ -57,7 +56,7 @@ export const renderHomePage = (): string => `
 export const renderCard = (country: Country): string => `
 <a href="#${country.name.common}" class="mx-auto">
   <div
-    class="card w-[16.5rem] flex flex-col h-[21rem] shadow-md bg-white rounded-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
+    class="card w-[16.5rem] flex flex-col h-[21rem] shadow-md bg-white rounded-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow dark:bg-gray-800 dark:hover:shadow-xl"
   >
     <img
       class="w-full h-40 object-cover"
@@ -95,7 +94,7 @@ export const renderCard = (country: Country): string => `
 export const renderHero = (country?: Country): string => `
 <a
   href="#"
-  class="inline-flex w-[8.5rem] justify-center gap-2 px-4 py-2 pr-6 bg-white rounded-md shadow-md cursor-pointer hover:shadow-lg transition-shadow focus:ring-2 focus:ring-gray-300"
+  class="inline-flex w-[8.5rem] justify-center gap-2 px-4 py-2 pr-6 bg-white rounded-md shadow-md cursor-pointer hover:shadow-lg transition-shadow focus:ring-2 focus:ring-gray-300 dark:bg-gray-800"
 >
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
     <path
