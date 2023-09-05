@@ -43,7 +43,7 @@ const load = async (): Promise<void> => {
   }
 }
 
-const render = (ev?: Event): void => {
+const render = (): void => {
   const page = decodeURI(window.location.hash.substring(1))
 
   page.length === 0 ? renderHome() : renderDetail(page)
