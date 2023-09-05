@@ -1,5 +1,7 @@
 import type { Country } from './api'
 
+const filters = ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
+
 export const renderHomePage = (): string => `
 <form class="flex justify-between gap-4 flex-wrap">
   <div class="inline-flex w-full max-w-[30rem] min-w-[15rem] relative h-max shadow-md bg-white rounded-md">
@@ -38,11 +40,14 @@ export const renderHomePage = (): string => `
       >Filter by Region</label
     >
     <ul id="filter" class="invisible absolute inset-x-0 top-full mt-2 py-3 peer-checked:visible shadow-md bg-white cursor-pointer">
-      <li class="px-6 py-1 hover:bg-gray-100 hover:text-gray-900" data-value="Africa">Africa</li>
-      <li class="px-6 py-1 hover:bg-gray-100 hover:text-gray-900" data-value="America">America</li>
-      <li class="px-6 py-1 hover:bg-gray-100 hover:text-gray-900" data-value="Asia">Asia</li>
-      <li class="px-6 py-1 hover:bg-gray-100 hover:text-gray-900" data-value="Europe">Europe</li>
-      <li class="px-6 py-1 hover:bg-gray-100 hover:text-gray-900" data-value="Oceania">Oceania</li>
+      <li class="px-6 py-1 hover:bg-gray-100 hover:text-gray-900" data-value="">All</li>
+      ${filters
+        .map(
+          (filter) => `
+<li class="px-6 py-1 hover:bg-gray-100 hover:text-gray-900" data-value="${filter}">${filter}</li>
+`
+        )
+        .join('')}
     </ul>
   </label>
 </form>
@@ -141,7 +146,7 @@ const renderDetail = (country: Country): string => `
           <li>
             <p>
               <b class="tracking-tight">Capital:</b>
-              <span> ${country.capital.join(', ')} </span>
+              <span> ${country.capital?.join(', ')} </span>
             </p>
           </li>
         </ul>
@@ -157,13 +162,13 @@ const renderDetail = (country: Country): string => `
               <b class="tracking-tight">Currencies:</b>
               <span> ${Object.values(country.currencies)
                 .map((c) => c.name)
-                .join(', ')} </span>
+                ?.join(', ')} </span>
             </p>
           </li>
           <li>
             <p>
               <b class="tracking-tight">Languages:</b>
-              <span> ${Object.values(country.languages).join(', ')} </span>
+              <span> ${Object.values(country.languages)?.join(', ')} </span>
             </p>
           </li>
         </ul>
