@@ -61,7 +61,7 @@ export const renderCard = (country: Country): string => `
     <img
       class="w-full h-40 object-cover"
       src="${country.flags.svg}"
-      alt="${country.flags.alt}"
+      alt="${country.flags.alt ?? `${country.name.common} flag`}"
       width="264"
       height="160"
     />
