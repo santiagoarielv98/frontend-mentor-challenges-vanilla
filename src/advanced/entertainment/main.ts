@@ -4,6 +4,8 @@ import data from './data.json'
 // pt-1.5 inset-x-7 bottom-6
 const trending = document.querySelector<HTMLDivElement>('#trending')
 const recommended = document.querySelector<HTMLDivElement>('#recommended')
+const navList = document.querySelector<HTMLUListElement>('#nav')!
+const navItems = navList.querySelectorAll<HTMLLIElement>('li')
 
 const renderTC = (item: any, isC?: boolean): HTMLElement => {
   const title = item.title ?? item.name
@@ -103,3 +105,14 @@ data.results.forEach((item: any) => {
 
   recommended!.appendChild(LiElement)
 })
+
+navItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    navItems.forEach((item) => {
+      item.classList.remove('text-white')
+    })
+    item.classList.add('text-white')
+  })
+})
+
+navItems[0].classList.add('text-white')
