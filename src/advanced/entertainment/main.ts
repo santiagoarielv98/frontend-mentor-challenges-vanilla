@@ -29,7 +29,7 @@ const renderTrendingCard = (item: (typeof data.results)[number]): string => {
     </svg>
   </button>
   <div class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto bg-black/70">
-    <button class="inline-flex items-center gap-4 p-2 bg-white/20 rounded-full">
+    <a href="#" class="inline-flex items-center gap-4 p-2 bg-white/20 rounded-full">
       <span class="p-2 bg-white/50 rounded-full text-gray-500">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
           <path
@@ -40,7 +40,7 @@ const renderTrendingCard = (item: (typeof data.results)[number]): string => {
         </svg>
       </span>
       <span class="text-lg font-medium mr-4"> Play </span>
-    </button>
+    </a>
   </div>
   <div class="inset-x-0 bottom-0 absolute px-7 py-6">
     <ul class="text-sm flex list-disc list-outside space-x-5">
