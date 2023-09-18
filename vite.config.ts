@@ -9,9 +9,9 @@ export default defineConfig({
     cssCodeSplit: true,
     rollupOptions: {
       input: {
-        main: resolve("index.html"),
+        main: resolve("main.html"),
         other: resolve(junior, "other/index.html"),
-        newsletterSignUpWithSuccessMessage: resolve(junior, "newsletter-sign-up-with-success-message/index.html"),
+        another: resolve(junior, "another/index.html"),
       },
     },
   },

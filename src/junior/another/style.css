@@ -1,0 +1,2 @@
+@tailwind utilities;
+@config "./tailwind.another.config.js";
