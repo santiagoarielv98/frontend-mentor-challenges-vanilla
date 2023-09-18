@@ -9,7 +9,8 @@ export default defineConfig({
     cssCodeSplit: true,
     rollupOptions: {
       input: {
-        main: resolve("main.html"),
+        main: resolve("index.html"),
+        // junior
         other: resolve(junior, "other/index.html"),
         another: resolve(junior, "another/index.html"),
       },
