@@ -11,8 +11,10 @@ export default defineConfig({
       input: {
         main: resolve("index.html"),
         // junior
-        other: resolve(junior, "other/index.html"),
-        another: resolve(junior, "another/index.html"),
+        "newsletter-sign-up-with-success-message": resolve(
+          junior,
+          "newsletter-sign-up-with-success-message/index.html"
+        ),
       },
     },
   },
