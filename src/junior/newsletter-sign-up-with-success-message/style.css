@@ -1,1 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 @tailwind utilities;
+@config "tailwind.newsletter.config.js";
+
+html {
+  font-family: Roboto, sans-serif;
+}

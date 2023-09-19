@@ -5,27 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
     <title>SV | Newsletter sign-up form with success message</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/junior/newsletter-sign-up-with-success-message/style.css" />
   </head>
-  <body class="bg-red-500 w-20 break-keep placeholder:h-80">
-    <!-- Sign-up form start -->
-
-    Stay updated! Join 60,000+ product managers receiving monthly updates on: Product discovery and building what
-    matters Measuring to ensure updates are a success And much more! Email address email@company.com Subscribe to
-    monthly newsletter
-
-    <!-- Sign-up form end -->
-
-    <!-- Success message start -->
-
-    Thanks for subscribing! A confirmation email has been sent to ash@loremcompany.com. Please open it and click the
-    button inside to confirm your subscription. Dismiss message
-
-    <!-- Success message end -->
-
-    <div class="attribution">
-      Coded by
-      <a href="#">Santiago Ariel Villanueva</a>.
+  <body class="min-h-screen flex justify-center items-center">
+    <div class="inline-flex w-full max-w-[58rem] min-h-[40rem] opacity-30 bg-white rounded-[2rem]">
+      <div class="grow w-full py-20 px-16">
+        <h1 class="text-[3.5rem] font-bold">Stay updated!</h1>
+        <p class="mt-3">Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul class="my-6 leading-relaxed">
+          <li class="inline-flex">
+            <span class="inline-flex mr-4">
+              <img
+                src="/src/junior/newsletter-sign-up-with-success-message/assets/images/icon-list.svg"
+                alt="icon-list"
+              />
+            </span>
+            <span>Product discovery and building what matters</span>
+          </li>
+          <li class="inline-flex">
+            <span class="inline-flex mr-4">
+              <img
+                src="/src/junior/newsletter-sign-up-with-success-message/assets/images/icon-list.svg"
+                alt="icon-list"
+              />
+            </span>
+            <span>Measuring to ensure updates are a success</span>
+          </li>
+          <li class="inline-flex">
+            <span class="inline-flex mr-4">
+              <img
+                src="/src/junior/newsletter-sign-up-with-success-message/assets/images/icon-list.svg"
+                alt="icon-list"
+              />
+            </span>
+            <span>And much more!</span>
+          </li>
+        </ul>
+        <form>
+          <div class="flex flex-col gap-2 py-2">
+            <label class="text-xs font-bold" for="email">Email address</label>
+            <input
+              class="w-full py-4 px-6 rounded-lg"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="email@company.com"
+            />
+          </div>
+          <button type="reset" class="inline-flex justify-center w-full mt-4 p-4">
+            <span> Subscribe to monthly newsletter </span>
+          </button>
+        </form>
+      </div>
+      <div class="grow w-full p-6">
+        <img
+          src="/src/junior/newsletter-sign-up-with-success-message/assets/images/illustration-sign-up-desktop.svg"
+          alt="illustration-sign-up-desktop"
+          width="400"
+          height="593"
+        />
+      </div>
+      <!-- 
+      Thanks for subscribing! A confirmation email has been sent to ash@loremcompany.com. Please open it and click the
+      button inside to confirm your subscription. Dismiss message
+ -->
+      <!-- Success message end -->
     </div>
-    <script type="module" src="main.ts"></script>
+
+    <div class="fixed bottom-0 right-0 px-2 py-1 bg-white text-black dark:bg-black dark:text-white">
+      Coded by
+      <a target="_blank" href="https://github.com/santiagoarielv98">Santiago Ariel Villanueva</a>.
+    </div>
+    <img class="fixed inset-0 -z-10" src="./design/desktop-design.jpg" alt="desktop-design" />
   </body>
 </html>

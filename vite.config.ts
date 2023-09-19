@@ -11,10 +11,7 @@ export default defineConfig({
       input: {
         main: resolve("index.html"),
         // junior
-        "newsletter-sign-up-with-success-message": resolve(
-          junior,
-          "newsletter-sign-up-with-success-message/index.html"
-        ),
+        newsletterSignUpWithSuccessMessage: resolve(junior, "newsletter-sign-up-with-success-message/index.html"),
       },
     },
   },
